@@ -2,7 +2,7 @@ import type { ExchangeRateResponse } from "../utils";
 
 export const fetchRates = async (): Promise<ExchangeRateResponse> => {
     const res = await fetch(
-        "https://v6.exchangerate-api.com/v6/8a77d202b19b174be16dd3e6/latest/USD"
+        `https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_API_KEY}/latest/USD`
     );
 
     if (!res.ok) {
