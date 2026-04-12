@@ -13,6 +13,7 @@ export const HomePage = () => {
     const [from, setFrom] = useState("USD");
     const [to, setTo] = useState("EGP");
     const [result, setResult] = useState<number | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
     const [confirm, setConfirm] = useState<boolean>(false);
 
     const getCurrencyName = (code: string) => {
@@ -23,6 +24,7 @@ export const HomePage = () => {
             try {
                 const data = await fetchRates();
                 setData(data);
+                setLoading(false)
             } catch (err) {
                 console.error(err);
             }
@@ -132,12 +134,12 @@ export const HomePage = () => {
                                     placeholder="Search or enter..."
                                     className={`${currencies ? `` : `pointer-events-none`} w-full px-3 py-2 rounded-lg bg-white/20 border border-white/20 focus:outline-none duration-300 focus:border-dashed focus:border-2 focus:border-emerald-400`}
                                     onChange={(e) => setFrom(e.target.value)}
-                                    value={currencies ? "" : "Not data found"}
+                                    value={loading ? "loading..." : from}
                                 />
                                 <datalist id="currentCurrency">
-                                    {currencies?.map((cur) => (
+                                    {currencies?.length ? currencies?.map((cur) => (
                                         <option key={cur} value={cur} label={getCurrencyName(cur)} />
-                                    ))}
+                                    )) : <option>No data found</option>}
                                 </datalist>
                             </div>
 
@@ -152,14 +154,12 @@ export const HomePage = () => {
                                     placeholder="Search or enter..."
                                     className={`w-full px-3 py-2 rounded-lg ${currencies ? `` : `pointer-events-none`} bg-white/20 border border-white/20 focus:outline-none duration-300 focus:border-dashed focus:border-2 focus:border-emerald-400`}
                                     onChange={(e) => setTo(e.target.value)}
-                                    value={currencies ? "" : "Not data found"}
+                                    value={loading ? "loading..." : to}
                                 />
                                 <datalist id="convertedCurrency">
-                                    {currencies?.map((cur) => (
+                                    {currencies?.length ? currencies?.map((cur) => (
                                         <option key={cur} value={cur} label={getCurrencyName(cur)} />
-                                    ))}
-
-
+                                    )) : <option>No data found</option>}
                                 </datalist>
                             </div>
 
