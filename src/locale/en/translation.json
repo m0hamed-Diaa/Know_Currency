@@ -1,0 +1,29 @@
+{
+  "language": "العربية",
+
+  "liveDataAvailable": "Live Exchange Rates Available",
+  "dataNotAvailable": "Exchange Rates Unavailable",
+  "fetchingLatestData": "Fetching latest exchange rates...",
+  "lastUpdate": "Last Update",
+  "nextUpdate": "Next Update",
+
+  "title": "Currency Converter",
+
+  "amount": "Amount",
+  "enterAmount": "Enter amount...",
+
+  "fromCurrency": "From Currency",
+  "toCurrency": "To Currency",
+
+  "searchCurrency": "Search currency...",
+
+  "convert": "Convert",
+  "reset": "Reset",
+
+  "loading": "Loading...",
+  "noCurrencies": "No currencies found",
+
+  "conversionResult": "Conversion Result",
+
+  "madeBy": "Made with ❤️ by"
+}

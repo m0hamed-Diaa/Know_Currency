@@ -1,0 +1,29 @@
+{
+  "language": "English",
+
+  "liveDataAvailable": "أسعار الصرف متاحة",
+  "dataNotAvailable": "أسعار الصرف غير متاحة",
+  "fetchingLatestData": "جارٍ تحميل أحدث أسعار الصرف...",
+  "lastUpdate": "آخر تحديث",
+  "nextUpdate": "التحديث القادم",
+
+  "title": "محول العملات",
+
+  "amount": "المبلغ",
+  "enterAmount": "أدخل المبلغ...",
+
+  "fromCurrency": "من عملة",
+  "toCurrency": "إلى عملة",
+
+  "searchCurrency": "ابحث عن العملة...",
+
+  "convert": "تحويل",
+  "reset": "إعادة تعيين",
+
+  "loading": "جارٍ التحميل...",
+  "noCurrencies": "لا توجد عملات",
+
+  "conversionResult": "نتيجة التحويل",
+
+  "madeBy": "تم تطويره بواسطة"
+}
