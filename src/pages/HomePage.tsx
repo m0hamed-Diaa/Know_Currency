@@ -35,6 +35,10 @@ export const HomePage = () => {
         i18n.changeLanguage(locale);
         document.documentElement.lang = locale;
         document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
+        document.title =
+            locale === "ar"
+                ? "اعرف عملتك حالا"
+                : "Know your currency now";
 
         getData();
     }, [locale]);
