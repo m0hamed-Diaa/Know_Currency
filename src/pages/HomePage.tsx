@@ -204,13 +204,15 @@ export const HomePage = () => {
                             <div className="flex items-center space-x-2">
                                 <button
                                     type="submit"
-                                    className={`w-full flex ${confirm ? `cursor-not-allowed` : `cursor-pointer`} items-center justify-center mt-2 py-2 bg-emerald-500 hover:bg-emerald-600 duration-300 transition rounded-lg font-semibold`}
+                                    disabled={loading}
+                                    className={`w-full disabled:cursor-not-allowed  flex ${confirm ? `cursor-not-allowed` : `cursor-pointer`} items-center justify-center mt-2 py-2 bg-emerald-500 hover:bg-emerald-600 duration-300 transition rounded-lg font-semibold`}
                                 >
                                     {confirm ? <Spinner /> : t("convert")}
                                 </button>
                                 <button
                                     type="reset"
-                                    className="w-full mt-2 py-2 bg-emerald-500 hover:bg-emerald-600 duration-300 cursor-pointer transition rounded-lg font-semibold"
+                                    disabled={loading}
+                                    className="w-full  disabled:cursor-not-allowed mt-2 py-2 bg-emerald-500 hover:bg-emerald-600 duration-300 cursor-pointer transition rounded-lg font-semibold"
                                     onClick={() => setResult(null)}
                                 >
                                     {t("reset")}
@@ -224,7 +226,7 @@ export const HomePage = () => {
                                     </p>
 
                                     <p className="mt-2 text-lg">
-                                        {amount} {from} = {result.toFixed(2)} {to}
+                                        {locale === "ar" ? (<>{to} {result.toFixed(2)}  = {from} {amount}</>) : <>{amount} {from} = {result.toFixed(2)} {to}</>}
                                     </p>
                                 </div>
                             )}
