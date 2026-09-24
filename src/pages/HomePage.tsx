@@ -71,8 +71,6 @@ export const HomePage = () => {
     return (
         <>
             <div className="bg-linear-to-br from-slate-900 to-slate-800 text-white p-6 shadow-lg w-full space-y-4">
-
-                {/* Langauge Button */}
                 <button
                     onClick={() =>
                         setLocale((prev) => (prev === "en" ? "ar" : "en"))
@@ -108,7 +106,7 @@ export const HomePage = () => {
                         🕒 {t("lastUpdate")}
                     </p>
                     <p className="font-medium">
-                        {new Date(String(data?.time_last_update_utc)).toLocaleString()}
+                        {new Date(String(data?.time_last_update_utc)).toLocaleString(locale === "ar" ? "ar:EG" : "en:US")}
                     </p>
                 </div>
 
@@ -117,14 +115,13 @@ export const HomePage = () => {
                         ⏳ {t("nextUpdate")}
                     </p>
                     <p className="font-medium">
-                        {new Date(String(data?.time_next_update_utc)).toLocaleString()}
+                        {new Date(String(data?.time_next_update_utc)).toLocaleString(locale === "ar" ? "ar:EG" : "en:US")}
                     </p>
                 </div>
             </div>
             <section className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 to-slate-800">
                 <div className="container max-w-4xl mx-4 md:mx-auto grid md:grid-cols-2 bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
 
-                    {/* 🖼️ Image Section */}
                     <div className="block">
                         <img
                             src="https://images.unsplash.com/photo-1604594849809-dfedbc827105"
@@ -133,7 +130,6 @@ export const HomePage = () => {
                         />
                     </div>
 
-                    {/* 📄 Form Section */}
                     <div className="p-8 text-white space-y-6">
                         <h1 className="text-3xl font-bold text-center text-emerald-400">
                             💱 {t("title")}
@@ -141,7 +137,6 @@ export const HomePage = () => {
 
                         <form className="space-y-4" onSubmit={handleConvert}>
 
-                            {/* Amount */}
                             <div>
                                 <label htmlFor="amount">
                                     {t("amount")}
@@ -156,7 +151,6 @@ export const HomePage = () => {
                                 />
                             </div>
 
-                            {/* Current Currency */}
                             <div>
                                 <label>
                                     {t("fromCurrency")}
@@ -178,7 +172,6 @@ export const HomePage = () => {
                                 </datalist>
                             </div>
 
-                            {/* Converted Currency */}
                             <div>
                                 <label>
                                     {t("toCurrency")}
@@ -200,7 +193,6 @@ export const HomePage = () => {
                                 </datalist>
                             </div>
 
-                            {/* Button */}
                             <div className="flex items-center space-x-2">
                                 <button
                                     type="submit"
