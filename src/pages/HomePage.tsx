@@ -106,7 +106,7 @@ export const HomePage = () => {
                         🕒 {t("lastUpdate")}
                     </p>
                     <p className="font-medium">
-                        {new Date(String(data?.time_last_update_utc)).toLocaleString(locale === "ar" ? "ar:EG" : "en:US")}
+                        {new Date(String(data?.time_last_update_utc)).toLocaleString(locale === "ar" ? "ar-EG" : "en-US")}
                     </p>
                 </div>
 
@@ -115,7 +115,7 @@ export const HomePage = () => {
                         ⏳ {t("nextUpdate")}
                     </p>
                     <p className="font-medium">
-                        {new Date(String(data?.time_next_update_utc)).toLocaleString(locale === "ar" ? "ar:EG" : "en:US")}
+                        {new Date(String(data?.time_next_update_utc)).toLocaleString(locale === "ar" ? "ar-EG" : "en-US")}
                     </p>
                 </div>
             </div>
